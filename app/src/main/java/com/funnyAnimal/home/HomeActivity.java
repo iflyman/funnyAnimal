@@ -14,7 +14,6 @@ import com.funnyAnimal.R;
 import com.funnyAnimal.api.DialyShow;
 import com.funnyAnimal.base.BaseActivity;
 import com.funnyAnimal.forum.ForumActivity;
-import com.funnyAnimal.fragment.ForumFragment;
 import com.funnyAnimal.story.StoryActivity;
 import com.funnyAnimal.user.UserLoginActivity;
 import com.funnyAnimal.utils.Constant;
