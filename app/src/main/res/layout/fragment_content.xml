@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_groud_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rect_radius"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/img_daily"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="6dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_below="@id/img_daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_gray1"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            tools:text="27"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_below="@id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_gray1"
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            tools:text="周四 六月"/>
+
+        <TextView
+            android:id="@+id/text_daily"
+            android:layout_below="@id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_gray2"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_centerHorizontal="true"
+            tools:text="正文部分"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="3"
+            android:ellipsize="end"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/text_daily"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="42dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp">
+
+            <View
+                android:layout_width="25dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/text_gray3"/>
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray2"
+                tools:text="测试一下"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

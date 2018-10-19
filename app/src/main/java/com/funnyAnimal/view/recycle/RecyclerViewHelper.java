@@ -1,0 +1,119 @@
+package com.funnyAnimal.view.recycle;
+
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+/**
+ * RecyclerView position helper class for any LayoutManager.
+ * <p/>
+ * compile 'com.android.support:recyclerview-v7:22.2.1'
+ */
+public class RecyclerViewHelper {
+
+    private RecyclerViewHelper() {
+    }
+
+    /**
+     * Returns the adapter item count.
+     *
+     * @return The total number on items in a layout manager
+     */
+    public static int getItemCount(RecyclerView recyclerView) {
+        final RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        return layoutManager == null ? 0 : layoutManager.getItemCount();
+    }
+
+    /**
+     * Returns the adapter position of the first visible view. This position does not include
+     * adapter changes that were dispatched after the last layout pass.
+     *
+     * @return The adapter position of the first visible item or {@link RecyclerView#NO_POSITION} if
+     * there aren't any visible items.
+     */
+    public static int findFirstVisibleItemPosition(RecyclerView recyclerView) {
+        final RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        final View child = findOneVisibleChild(layoutManager, 0, layoutManager.getChildCount(), false, true);
+        return child == null ? RecyclerView.NO_POSITION : recyclerView.getChildAdapterPosition(child);
+    }
+
+    /**
+     * Returns the adapter position of the first fully visible view. This position does not include
+     * adapter changes that were dispatched after the last layout pass.
+     *
+     * @return The adapter position of the first fully visible item or
+     * {@link RecyclerView#NO_POSITION} if there aren't any visible items.
+     */
+    public static int findFirstCompletelyVisibleItemPosition(RecyclerView recyclerView) {
+        final RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        final View child = findOneVisibleChild(layoutManager, 0, layoutManager.getChildCount(), true, false);
+        return child == null ? RecyclerView.NO_POSITION : recyclerView.getChildAdapterPosition(child);
+    }
+
+    /**
+     * Returns the adapter position of the last visible view. This position does not include
+     * adapter changes that were dispatched after the last layout pass.
+     *
+     * @return The adapter position of the last visible view or {@link RecyclerView#NO_POSITION} if
+     * there aren't any visible items
+     */
+    public static int findLastVisibleItemPosition(RecyclerView recyclerView) {
+        final RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        final View child = findOneVisibleChild(layoutManager, layoutManager.getChildCount() - 1, -1, false, true);
+        return child == null ? RecyclerView.NO_POSITION : recyclerView.getChildAdapterPosition(child);
+    }
+
+    /**
+     * Returns the adapter position of the last fully visible view. This position does not include
+     * adapter changes that were dispatched after the last layout pass.
+     *
+     * @return The adapter position of the last fully visible view or
+     * {@link RecyclerView#NO_POSITION} if there aren't any visible items.
+     */
+    public static int findLastCompletelyVisibleItemPosition(RecyclerView recyclerView) {
+        final RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        final View child = findOneVisibleChild(layoutManager, layoutManager.getChildCount() - 1, -1, true, false);
+        return child == null ? RecyclerView.NO_POSITION : recyclerView.getChildAdapterPosition(child);
+    }
+
+    public static int getDistance(RecyclerView recyclerView) {
+        LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+        int position = layoutManager.findFirstVisibleItemPosition();
+        View firstVisiableChildView = layoutManager.findViewByPosition(position);
+        int itemHeight = firstVisiableChildView.getHeight();
+        return (position) * itemHeight - firstVisiableChildView.getTop();
+    }
+
+    static View findOneVisibleChild(RecyclerView.LayoutManager layoutManager, int fromIndex, int toIndex, boolean completelyVisible,
+                                    boolean acceptPartiallyVisible) {
+        OrientationHelper helper;
+        if (layoutManager.canScrollVertically()) {
+            helper = OrientationHelper.createVerticalHelper(layoutManager);
+        } else {
+            helper = OrientationHelper.createHorizontalHelper(layoutManager);
+        }
+
+        final int start = helper.getStartAfterPadding();
+        final int end = helper.getEndAfterPadding();
+        final int next = toIndex > fromIndex ? 1 : -1;
+        View partiallyVisible = null;
+        for (int i = fromIndex; i != toIndex; i += next) {
+            final View child = layoutManager.getChildAt(i);
+            final int childStart = helper.getDecoratedStart(child);
+            final int childEnd = helper.getDecoratedEnd(child);
+            if (childStart < end && childEnd > start) {
+                if (completelyVisible) {
+                    if (childStart >= start && childEnd <= end) {
+                        return child;
+                    } else if (acceptPartiallyVisible && partiallyVisible == null) {
+                        partiallyVisible = child;
+                    }
+                } else {
+                    return child;
+                }
+            }
+        }
+        return partiallyVisible;
+    }
+}

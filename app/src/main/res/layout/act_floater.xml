@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.funnyAnimal.floater.view.WaveViewBySinCos
+        android:id="@+id/waveView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        card:waveAmplitude="15dp"
+        card:waveColor="@color/blue_3"
+        card:waveFillType="bottom"
+        card:waveSpeed="4"
+        card:waveStart="true"
+        card:waveStartPeriod="1"
+        card:waveType="sin" />
+
+
+    <com.funnyAnimal.floater.view.WaveViewBySinCos
+        android:id="@+id/waveView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        card:waveAmplitude="15dp"
+        card:waveColor="@color/blue_5"
+        card:waveFillType="bottom"
+        card:waveSpeed="4"
+        card:waveStart="true"
+        card:waveStartPeriod="2"
+        card:waveType="sin" />
+
+    <com.huxq17.swipecardsview.SwipeCardsView
+        android:id="@+id/swipCardsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card:alphaOffsetStep="20"
+        card:scaleOffsetStep="0.08"
+        card:yOffsetStep="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:src="@mipmap/img_return_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="漂流旅程"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add" />
+
+</android.support.design.widget.CoordinatorLayout>

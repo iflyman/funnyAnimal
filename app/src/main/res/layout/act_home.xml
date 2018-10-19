@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:canLoop="true"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/dot_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="-5dp"
+        android:paddingBottom="-5dp" />
+    
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="下午好"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="32dp"/>
+
+    <TextView
+        android:id="@+id/tv_mood"
+        android:layout_below="@id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="在这光辉岁月，风雨中拥抱自由。"
+        android:textSize="14sp"
+        android:layout_marginLeft="32dp"
+        android:textColor="@color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/tab_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="42dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnStory"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_alignParentLeft="true"
+            android:background="@mipmap/img_floater"
+            android:text="故事"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="bottom"
+            android:paddingBottom="24dp"
+            android:paddingLeft="24dp"
+            android:alpha="0.8" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnForum"
+            android:layout_width="160dp"
+            android:layout_height="86dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/img_forum"
+            android:text="社区"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="bottom"
+            android:paddingBottom="24dp"
+            android:paddingLeft="24dp"
+            android:alpha="0.8"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/fence"
+        android:layout_above="@id/tab_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/text_gray3"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"/>
+
+    <LinearLayout
+        android:id="@+id/toLogin"
+        android:layout_above="@id/fence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp">
+
+        <com.funnyAnimal.view.CircleImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_login_default"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="不要温柔的走入那良夜 岁月应当以歌来和"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

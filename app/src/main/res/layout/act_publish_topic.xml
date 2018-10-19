@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/back_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:background="@mipmap/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="发表帖子"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/tv_title"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请填写标题"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:singleLine="true"
+        android:maxLength="15"
+        android:textColorHint="@color/text_gray3"
+        android:textColor="@color/text_gray1"/>
+
+    <View
+        android:id="@+id/fence"
+        android:layout_below="@id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@color/text_gray3"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:text="提交"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/yellow_dark"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_commit"
+        android:choiceMode="singleChoice"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:scrollbarStyle="outsideOverlay"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:listitem="@layout/list_item_image"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <RelativeLayout
+        android:id="@+id/fence2"
+        android:layout_above="@id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可选择添加图片"
+            android:textSize="14sp"
+            android:textColor="@color/text_gray3"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_toLeftOf="@id/add_text"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_gray3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"/>
+
+        <View
+            android:layout_toRightOf="@id/add_text"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_gray3"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/tv_content"
+        android:layout_below="@id/fence"
+        android:layout_above="@id/fence2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="每个人都有成为段子手的可能..."
+        android:textSize="14sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@null"
+        android:textColorHint="@color/text_gray3"
+        android:textColor="@color/text_gray1"
+        android:gravity="top"/>
+
+</RelativeLayout>
