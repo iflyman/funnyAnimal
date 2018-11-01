@@ -63,7 +63,7 @@ public class UserLoginActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.toLogin, R.id.btn_return, R.id.btn_donate, R.id.btn_feedback, R.id.btn_about_us})
+    @OnClick({R.id.toLogin, R.id.btn_return, R.id.btn_donate,R.id.btn_about_us})
     void toClick(View view) {
         switch (view.getId()) {
             case R.id.toLogin:
@@ -81,8 +81,6 @@ public class UserLoginActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.btn_donate:
-                break;
-            case R.id.btn_feedback:
                 break;
             case R.id.btn_about_us:
                 break;

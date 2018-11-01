@@ -2,6 +2,7 @@ package com.funnyAnimal.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,11 +57,12 @@ public class ContentFragment extends BaseFragment {
 
     @Override
     protected void afterViews() {
+        Log.e("bokey","创建fragment");
         bundle = getArguments();
         String date = bundle.getString("date");
         ImageLoadFactory.displayForHome(getContext(), bundle.getString("imgUrl").replace("https", "http"), imgDaily);
         tvDay.setText(DateUtil.getLastDay(date));
-//        tvDate.setText(DateUtil.getWeekByDateStr(date) + "  " + DateUtil.getMonthByDateStr(date));
+        tvDate.setText(DateUtil.getWeekByDateStr(date) + "  " + DateUtil.getMonthByDateStr(date));
         tvDaily.setText(bundle.getString("text"));
         tvAuthor.setText(bundle.getString("author"));
     }

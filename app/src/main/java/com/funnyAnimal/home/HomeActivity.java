@@ -53,8 +53,8 @@ public class HomeActivity extends BaseActivity {
     private void toShowDaily() {
         List<String> ads = new ArrayList<>();
         ads.add("http://os76ha42j.bkt.clouddn.com/05.jpg");
-        ads.add("http://os76ha42j.bkt.clouddn.com/12.jpg");
-        ads.add("http://os76ha42j.bkt.clouddn.com/05.jpg");
+        ads.add("http://os76ha42j.bkt.clouddn.com/06.jpg");
+        ads.add("http://os76ha42j.bkt.clouddn.com/08.jpg");
         ads.add("http://os76ha42j.bkt.clouddn.com/12.jpg");
 
         banner.startTurning(10000).setPageIndicator(new int[]{R.drawable.banner_point, R.drawable.banner_point_selected})

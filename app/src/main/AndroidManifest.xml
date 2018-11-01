@@ -27,7 +27,7 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -50,11 +50,8 @@
             android:name=".story.StoryActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".forum.ForumActivity"
-            android:screenOrientation="portrait"/>
-
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".forum.ForumActivity"
             android:screenOrientation="portrait" />
 
         <activity android:name="com.funnyAnimal.activity.TestActivity" />

@@ -17,7 +17,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:background="@mipmap/img_cha_white"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/rl_title"
@@ -89,29 +90,31 @@
             android:textColor="@color/text_gray1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/btn_feedback"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="16dp"
-            android:text="反馈"
-            android:textColor="@color/text_gray1"
-            android:textSize="16sp" />
+            android:layout_height="50dp">
 
-        <TextView
-            android:id="@+id/btn_about_us"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="left|center_vertical"
-            android:paddingLeft="16dp"
-            android:text="关于"
-            android:textColor="@color/text_gray1"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/btn_about_us"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="16dp"
+                android:text="关于"
+                android:textColor="@color/text_gray1"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/red_dot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/red_dot"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="60dp"
+                android:visibility="visible"/>
+        </FrameLayout>
 
     </LinearLayout>
 

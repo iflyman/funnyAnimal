@@ -40,9 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_below="@id/tv_des"
-        android:text="微信登录"
+        android:text="QQ登录"
         android:gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="24dp"
-        android:background="@drawable/icon_login_corner"/>
+        android:background="@drawable/icon_login_corner" />
 </RelativeLayout>

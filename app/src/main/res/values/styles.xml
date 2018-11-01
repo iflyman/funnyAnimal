@@ -51,4 +51,9 @@
         <item name="android:windowIsFloating">true</item>
     </style>
 
+    <style name="MainTab.TextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#CCCCCC</item>
+    </style>
+
 </resources>

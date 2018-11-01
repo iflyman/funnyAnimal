@@ -13,10 +13,12 @@ import com.funnyAnimal.api.MainApi;
 import com.funnyAnimal.api.Result;
 import com.funnyAnimal.base.BaseFragment;
 import com.funnyAnimal.base.RetrofitUtils;
+import com.funnyAnimal.utils.Constant;
 import com.funnyAnimal.utils.ListUtils;
 import com.funnyAnimal.utils.UiHelper;
 import com.funnyAnimal.view.MultiSwipeRefreshLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -52,6 +54,19 @@ public class HomeFragment extends BaseFragment {
         mSwipeRefresh.setEnabled(false);
         mainApi = RetrofitUtils.get().create(MainApi.class);
         toGetDialyShows();
+        List data = new ArrayList<DialyShow>();
+        DialyShow dialyShow = new DialyShow();
+        dialyShow.type = Constant.TYPEPIC;
+        dialyShow.text = "春江潮水连海平 海上明月共潮生";
+        dialyShow.metaUrl ="";
+        dialyShow.imgUrl = "http://os76ha42j.bkt.clouddn.com/05.jpg";
+        dialyShow.date = "20181022";
+        dialyShow.author = "波波";
+        data.add(dialyShow);
+        data.add(dialyShow);
+        data.add(dialyShow);
+        data.add(dialyShow);
+        setFragment(data);
     }
 
 

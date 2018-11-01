@@ -10,12 +10,14 @@
         android:layout_height="match_parent"
         android:background="@drawable/rect_radius"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp">
 
         <ImageView
             android:id="@+id/img_daily"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="400dp"
             android:layout_margin="6dp"
             android:scaleType="centerCrop"/>
 

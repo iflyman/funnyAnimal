@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:background="@color/colorPrimary"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:text="趣萌宠物"
             android:textColor="@android:color/white"
-            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
             android:textSize="16sp"/>
 
     </RelativeLayout>
