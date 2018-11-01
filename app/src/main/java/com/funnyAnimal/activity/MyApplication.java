@@ -6,9 +6,6 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.alibaba.sdk.android.feedback.impl.FeedbackAPI;
-import com.funnyAnimal.utils.PicassoImageLoader;
-import com.lzy.imagepicker.ImagePicker;
-import com.lzy.imagepicker.view.CropImageView;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -20,8 +17,6 @@ import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.common.QueuedWork;
-
-import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by bhyan on 2017/6/26.
@@ -62,11 +57,11 @@ public class MyApplication extends Application {
 
             @Override
             public void onFailure(String s, String s1) {
-                Log.e("bokey","失败原因"+s+"   "+s1);
+                Log.e("bokey", "失败原因" + s + "   " + s1);
             }
         });
 
-        FeedbackAPI.init(application, "24691497","070ac565890342f61872dee18206a7da");
+        FeedbackAPI.init(application, "24691497", "070ac565890342f61872dee18206a7da");
 
         initImageLoader(this);
     }
